@@ -15,7 +15,7 @@ func main() {
 	var Age uint
 	fmt.Scan(&Age)
 
-	if Age >= 10 {
+	if Age >= 15 {
 		fmt.Println("You can play the game")
 		// continue
 	} else {
@@ -44,13 +44,13 @@ func main() {
 	
 	// Display #2 Question to the Users
 
-	fmt.Printf("How many cored does the ryzon 9 3900x have ?")
-	var cores uint
+	fmt.Printf("How many cards does a deck have ?")
+	var cores uint // uint restricts users to enter -ve digits
 	fmt.Scan(&cores)
 
 	fmt.Println("You entered answer is :", cores)
 
-	if cores == 12 {
+	if cores == 52 {
 		fmt.Println("Yohoo! You got the right answer!")
 		scores++
 	} else {
