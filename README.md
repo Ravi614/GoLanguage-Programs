@@ -3,4 +3,4 @@ This is an attempt to provide Basic Level Go language programming skills from ba
 
 The level are as follows - https://adriann.github.io/programming_problems.html
 
-The link mentioned above is good to go through and start finding solutions by writing code everyday.
+The link mentioned above is good to go through (the above page contains programming questions without solutions) and start finding solutions by writing code everyday. If you can't figure out the approach, please feel free to open or download my solutions for every questions
