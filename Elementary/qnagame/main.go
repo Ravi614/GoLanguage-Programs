@@ -15,7 +15,7 @@ func main() {
 	var Age uint
 	fmt.Scan(&Age)
 
-	if Age >= 15 {
+	if Age >= 10 {
 		fmt.Println("You can play the game")
 		// continue
 	} else {
@@ -23,10 +23,8 @@ func main() {
 		return
 	}
 
-	scores := 0 // Count number of Questions attempt Score
-	num_questions := 2 //  Total number of questions in this file
-	
-	// Display #1 Question to the Users
+	scores := 0
+	num_questions := 2
 
 	fmt.Printf("Which one is more powerful RTX 3080 or RTX 3090 ?")
 
@@ -41,16 +39,14 @@ func main() {
 	} else {
 		fmt.Println("You lost this attempt!")
 	}
-	
-	// Display #2 Question to the Users
 
-	fmt.Printf("How many cards does a deck have ?")
-	var cores uint // uint restricts users to enter -ve digits
+	fmt.Printf("How many cored does the ryzon 9 3900x have ?")
+	var cores uint
 	fmt.Scan(&cores)
 
 	fmt.Println("You entered answer is :", cores)
 
-	if cores == 52 {
+	if cores == 12 {
 		fmt.Println("Yohoo! You got the right answer!")
 		scores++
 	} else {
