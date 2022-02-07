@@ -23,8 +23,10 @@ func main() {
 		return
 	}
 
-	scores := 0
-	num_questions := 2
+	scores := 0 // Count number of Questions attempt Score
+	num_questions := 2 //  Total number of questions in this file
+	
+	// Display #1 Question to the Users
 
 	fmt.Printf("Which one is more powerful RTX 3080 or RTX 3090 ?")
 
@@ -39,6 +41,8 @@ func main() {
 	} else {
 		fmt.Println("You lost this attempt!")
 	}
+	
+	// Display #2 Question to the Users
 
 	fmt.Printf("How many cored does the ryzon 9 3900x have ?")
 	var cores uint
