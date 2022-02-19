@@ -1,19 +1,65 @@
 package main
 
-import "fmt"
+import (
+	"bufio"
+	"fmt"
+	"log"
+	"math/rand"
+	"os"
+	"strconv"
+	"strings"
+	"time"
+)
 
 func main() {
-	fmt.Println("welcome to the guess the number game")
-	fmt.Println("Please guess a number (0-100):")
-	var gnum int = 67
+	seconds := time.Now().Unix()
+	rand.Seed(seconds)
 
-	fmt.Scan(&gnum)
+	target := rand.Intn(100) + 1
 
-	if gnum < 67 {
-		fmt.Println("go higher to match the secret number")
-	} else if gnum > 67 {
-		fmt.Println("go lower to match the secret number")
-	} else {
-		fmt.Println("Yay, You are a Genius :)")
+	fmt.Println("This app has fixed random number between 1 to 100")
+	fmt.Println("Can you guess it ?")
+	// fmt.Println(target)
+
+	// Get the input from keyboard
+	reader := bufio.NewReader(os.Stdin)
+
+	success := false
+
+	for guesses := 0; guesses < 10; guesses++ {
+		fmt.Println("You have ", 10-guesses, "guesses left.")
+
+		fmt.Print("Make a guess: ")
+		
+		// Readstring returns strings, hence convert to int either by parseFloat or Atoi
+
+		input, err := reader.ReadString('\n')
+
+		errorGen(err)
+
+		input = strings.TrimSpace(input)
+		guess, err := strconv.Atoi(input)
+
+		errorGen(err)
+
+		if guess < target {
+			fmt.Println("Oops, Your guess was LOW.")
+		} else if guess > target {
+			fmt.Println("Oops, Your guess was HIGH.")
+		} else {
+			fmt.Println("Good job! You Guessed it right!")
+			break
+		}
+	}
+	if !success {
+		fmt.Println("Sorry, you didn't guess my number correctly. It was", target)
+	}
+}
+
+// Avoid repetation of this below sode snippet
+
+func errorGen(err error) {
+	if err != nil {
+		log.Fatal(err)
 	}
 }
